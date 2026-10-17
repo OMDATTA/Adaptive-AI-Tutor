@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#234735">
+  <meta name="description" content="A retro-inspired adaptive AI tutor for learning core machine-learning concepts through spaced practice and semantic feedback.">
+  <title>Study Grove — Adaptive AI Tutor</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to study area</a>
+  <div class="site-wrap">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Study Grove home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img"><path d="M24 39V14M24 27C9 27 7 17 8 8c11 0 17 6 16 19Zm0-7C24 9 33 5 41 7c1 10-5 19-17 20"/><path d="M13 40h22"/></svg>
+        </span>
+        <span class="brand-copy"><span class="brand-kicker">THE LEARNING FIELD GUIDE</span><span class="brand-name">Study Grove</span></span>
+      </a>
+      <div class="masthead-note"><span class="note-stamp">VOL. 01</span><span>LEARN AT YOUR OWN PACE</span></div>
+    </header>
+
+    <main id="main">
+      <section class="intro-grid" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> AN ADAPTIVE STUDY COMPANION <span class="eyebrow-line"></span></p>
+          <h1 id="page-title">Small steps.<br><em>Stronger understanding.</em></h1>
+          <p class="intro-text">A thoughtful little tutor for machine-learning fundamentals. Answer in your own words; the next question follows the concepts that need the most attention.</p>
+          <div class="intro-actions">
+            <button id="start-session" class="button button-primary" type="button">Begin a 10-question session <span aria-hidden="true">↗</span></button>
+            <span class="fine-print">NO TIMERS · NO LEADERBOARDS · JUST PRACTICE</span>
+          </div>
+        </div>
+        <aside class="field-note" aria-label="How the tutor works">
+          <div class="field-note-top"><span>FIELD NOTE 06</span><span class="seal">SG</span></div>
+          <p class="field-note-heading">The method</p>
+          <ol class="method-list">
+            <li><span>01</span><div><strong>Recall</strong><small>Explain the idea without looking.</small></div></li>
+            <li><span>02</span><div><strong>Reflect</strong><small>Review the feedback and reference answer.</small></div></li>
+            <li><span>03</span><div><strong>Return</strong><small>Revisit weaker ideas at a useful level.</small></div></li>
+          </ol>
+          <p class="field-note-footer">A GOOD HABIT, BUILT ONE ANSWER AT A TIME.</p>
+        </aside>
+      </section>
+
+      <section class="status-strip" aria-label="Tutor status">
+        <div class="status-item"><span class="status-label">SEMANTIC ENGINE</span><span class="status-value"><span id="engine-dot" class="status-dot is-loading"></span><span id="engine-status" aria-live="polite">Preparing local model…</span></span></div>
+        <div class="status-item"><span class="status-label">QUESTION LIBRARY</span><span class="status-value"><span id="question-count">18</span> prompts · 6 concepts</span></div>
+        <div class="status-item"><span class="status-label">YOUR NOTES</span><span class="status-value"><span class="local-dot"></span> Saved in this browser</span></div>
+      </section>
+
+      <section class="stats-grid" aria-label="Learning summary">
+        <article class="stat-card"><span class="stat-label">QUESTIONS ANSWERED</span><strong id="stat-attempts" class="stat-number">0</strong><span class="stat-foot">Across all sessions</span></article>
+        <article class="stat-card"><span class="stat-label">ANSWER ACCURACY</span><strong id="stat-accuracy" class="stat-number">—</strong><span class="stat-foot">Answers graded “Correct”</span></article>
+        <article class="stat-card"><span class="stat-label">AVERAGE SIMILARITY</span><strong id="stat-average" class="stat-number">—</strong><span class="stat-foot">Reference-answer match</span></article>
+        <article class="stat-card stat-card-highlight"><span class="stat-label">STRONG CONCEPTS</span><strong id="stat-strong" class="stat-number">0<span class="stat-unit"> / 6</span></strong><span class="stat-foot">Mastery at 70% or higher</span></article>
+      </section>
+
+      <div class="content-grid">
+        <section class="study-panel paper-card" aria-labelledby="study-title">
+          <div class="section-heading">
+            <div><p class="eyebrow">YOUR STUDY DESK</p><h2 id="study-title">Practice room</h2></div>
+            <span class="issue-label">LESSON <b id="session-index">—</b></span>
+          </div>
+          <div class="session-toolbar">
+            <label for="study-mode">Study route</label>
+            <select id="study-mode" name="study-mode"><option value="adaptive">Adaptive path — choose for me</option></select>
+            <span class="toolbar-hint">Change the route for your next question.</span>
+          </div>
+          <div class="session-progress" aria-label="Session progress"><div id="session-progress-fill" class="session-progress-fill" style="width:0%"></div></div>
+          <div id="session-empty" class="empty-state">
+            <div class="empty-illustration" aria-hidden="true"><svg viewBox="0 0 120 100"><path d="M19 22Q39 13 60 25V80Q39 68 19 78Z"/><path d="M101 22Q81 13 60 25V80Q81 68 101 78Z"/><path d="M60 25V80"/><path d="M29 37Q43 33 50 40M29 49Q43 45 50 52M70 40Q82 34 91 37M70 52Q82 46 91 49"/><path d="M13 86Q60 94 107 86"/></svg></div>
+            <h3>Ready when you are.</h3>
+            <p>Start a session and try to explain each concept in your own words. The tutor will adjust the path as your mastery changes.</p>
+            <button id="empty-start" class="button button-secondary" type="button">Open the first question <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="question-area" class="question-area" hidden>
+            <div class="question-meta"><span id="question-concept" class="concept-tag">Overfitting</span><span id="question-difficulty" class="difficulty-tag">MEDIUM</span><span id="question-number" class="question-id">CARD 02</span></div>
+            <div class="question-rule"><span class="rule-flower" aria-hidden="true">✳</span></div>
+            <h3 id="question-text" class="question-text">What is overfitting in machine learning?</h3>
+            <p class="answer-instruction">Use your own words. A clear explanation matters more than using exact phrases.</p>
+            <form id="answer-form">
+              <label for="student-answer" class="input-label">YOUR EXPLANATION <span>·</span> TAKE YOUR TIME</label>
+              <textarea id="student-answer" name="student-answer" rows="5" maxlength="2500" placeholder="Start with what you understand about the concept…" required></textarea>
+              <div class="answer-bottom"><span id="char-count">0 / 2500</span><button id="check-answer" class="button button-primary" type="submit">Check my answer <span aria-hidden="true">↗</span></button></div>
+            </form>
+            <div id="answer-result" class="answer-result" hidden aria-live="polite">
+              <div class="result-topline"><span class="result-eyebrow">YOUR FEEDBACK</span><span id="result-classification" class="result-badge">PARTIALLY CORRECT</span></div>
+              <div class="result-score-row"><strong id="result-score">58.4</strong><span id="result-score-label">SIMILARITY SCORE</span><span id="result-method" class="method-pill">Semantic model</span></div>
+              <p id="result-feedback" class="result-feedback"></p>
+              <details class="reference-answer"><summary>Read the reference answer</summary><p id="reference-answer-text"></p></details>
+              <div class="mastery-change"><span>UPDATED CONCEPT MASTERY</span><strong id="result-mastery">53%</strong><div class="mini-meter"><span id="result-mastery-fill" style="width:53%"></span></div></div>
+              <div class="result-actions"><button id="next-question" class="button button-primary" type="button">Next question <span aria-hidden="true">→</span></button><button id="end-session" class="text-button" type="button">End session</button></div>
+            </div>
+          </div>
+          <div id="session-complete" class="session-complete" hidden>
+            <div class="complete-stamp">SESSION<br>COMPLETE</div>
+            <p class="eyebrow">GOOD WORK, STUDENT</p><h3>Your study session is in the books.</h3><p id="session-summary">You completed your session.</p>
+            <div class="complete-stats"><div><span>QUESTIONS</span><strong id="complete-count">10</strong></div><div><span>AVG. MATCH</span><strong id="complete-average">—</strong></div><div><span>NEW MASTERY</span><strong id="complete-mastery">—</strong></div></div>
+            <button id="restart-session" class="button button-primary" type="button">Begin another session <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+
+        <aside class="side-column">
+          <section class="paper-card mastery-panel" aria-labelledby="mastery-title">
+            <div class="section-heading compact"><div><p class="eyebrow">THE BIG PICTURE</p><h2 id="mastery-title">Concept garden</h2></div><span class="little-leaf" aria-hidden="true">❧</span></div>
+            <p class="panel-description">Mastery is a study indicator, not a fixed measure of ability. Each answer nudges it up or down.</p>
+            <div id="mastery-list" class="mastery-list"></div>
+            <div class="legend-row"><span><i class="legend-dot legend-low"></i> Needs attention</span><span><i class="legend-dot legend-mid"></i> Growing</span><span><i class="legend-dot legend-high"></i> Strong</span></div>
+          </section>
+          <section class="focus-card" aria-labelledby="focus-title"><div class="focus-heading"><span class="focus-icon" aria-hidden="true">✦</span><div><p class="eyebrow">NEXT IN THE MARGIN</p><h2 id="focus-title">A little focus</h2></div></div><p id="focus-intro" class="focus-intro">Your tutor will suggest a concept as you practise.</p><ul id="focus-list" class="focus-list"><li>Complete a question to start your notes.</li></ul></section>
+        </aside>
+      </div>
+
+      <section class="history-section paper-card" aria-labelledby="history-title">
+        <div class="section-heading"><div><p class="eyebrow">YOUR LEARNING JOURNAL</p><h2 id="history-title">Recent attempts</h2></div><span class="issue-label">PERSONAL RECORD</span></div>
+        <div id="history-empty" class="history-empty">Your answered questions will appear here. Your journal stays on this device unless you export it.</div>
+        <div id="history-list" class="history-list"></div>
+        <div class="journal-actions"><div class="journal-note"><span class="tiny-star" aria-hidden="true">✳</span><span>Keep what helps. Export your notes whenever you need them.</span></div><div class="action-buttons"><button id="download-csv" class="button button-outline" type="button">Export CSV</button><button id="download-json" class="button button-outline" type="button">Export JSON</button><button id="reset-progress" class="button button-quiet" type="button">Clear progress</button></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="footer-brand" href="/">STUDY GROVE <span>✳</span></a><p>Made for curious minds and patient practice.</p><p class="footer-note">SEMANTIC SCORES ARE APPROXIMATIONS — LEARN FROM THE FEEDBACK, NOT JUST THE NUMBER.</p></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
