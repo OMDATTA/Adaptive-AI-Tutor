@@ -1,0 +1,9 @@
+{
+  "name": "study-grove-adaptive-ai-tutor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static retro-green adaptive AI tutor",
+  "scripts": {
+    "test": "python -m pytest -q tests"
+  }
+}
