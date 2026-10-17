@@ -1,0 +1,35 @@
+{
+  "project": "Adaptive AI Tutor",
+  "source_notebook": "Adaptive_AI_Tutor.ipynb",
+  "embedding_model_python": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_browser": "Xenova/all-MiniLM-L6-v2",
+  "scoring_method": "cosine similarity between student answer and reference answer, multiplied by 100; lexical F1 fallback is explicitly labeled",
+  "classification_thresholds": {
+    "correct_min": 70,
+    "partially_correct_min": 45,
+    "incorrect_below": 45
+  },
+  "mastery_update": {
+    "correct": 10,
+    "partially_correct": 3,
+    "incorrect": -10,
+    "clamp_min": 0,
+    "clamp_max": 100
+  },
+  "difficulty_thresholds": {
+    "easy_below": 40,
+    "medium_below": 70,
+    "hard_from": 70
+  },
+  "concepts": [
+    "Overfitting",
+    "Classification",
+    "Regression",
+    "Cross Validation",
+    "Underfitting",
+    "KNN"
+  ],
+  "question_count": 18,
+  "session_length": 10,
+  "notes": "The browser app is static-first; student profile and history are saved only in that browser localStorage unless exported."
+}

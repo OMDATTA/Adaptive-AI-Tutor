@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "concept": "Overfitting",
+    "difficulty": "Easy",
+    "question": "What is overfitting in machine learning?",
+    "answer": "Overfitting occurs when a model learns the training data too closely, including noise, and performs poorly on unseen data."
+  },
+  {
+    "id": 2,
+    "concept": "Overfitting",
+    "difficulty": "Medium",
+    "question": "Why does overfitting cause poor performance on test data?",
+    "answer": "Overfitting causes poor test performance because the model learns specific patterns and noise from the training data instead of general patterns."
+  },
+  {
+    "id": 3,
+    "concept": "Overfitting",
+    "difficulty": "Hard",
+    "question": "How can regularization help prevent overfitting?",
+    "answer": "Regularization adds a penalty for model complexity, encouraging simpler models that generalize better to unseen data."
+  },
+  {
+    "id": 4,
+    "concept": "Classification",
+    "difficulty": "Easy",
+    "question": "What is classification in machine learning?",
+    "answer": "Classification is a supervised learning task in which a model predicts discrete categories or classes."
+  },
+  {
+    "id": 5,
+    "concept": "Classification",
+    "difficulty": "Medium",
+    "question": "What is the difference between binary and multiclass classification?",
+    "answer": "Binary classification predicts one of two classes, while multiclass classification predicts one of more than two classes."
+  },
+  {
+    "id": 6,
+    "concept": "Classification",
+    "difficulty": "Hard",
+    "question": "How does logistic regression perform classification?",
+    "answer": "Logistic regression calculates a probability using the logistic function and assigns the input to a class using a decision threshold."
+  },
+  {
+    "id": 7,
+    "concept": "Regression",
+    "difficulty": "Easy",
+    "question": "What is regression in machine learning?",
+    "answer": "Regression is a supervised learning technique used to predict continuous numerical values."
+  },
+  {
+    "id": 8,
+    "concept": "Regression",
+    "difficulty": "Medium",
+    "question": "What is the purpose of a regression model?",
+    "answer": "A regression model learns relationships between variables and predicts a continuous target value."
+  },
+  {
+    "id": 9,
+    "concept": "Regression",
+    "difficulty": "Hard",
+    "question": "What is the difference between MAE and RMSE?",
+    "answer": "MAE measures the average absolute error, while RMSE is the square root of mean squared error and gives greater importance to large errors."
+  },
+  {
+    "id": 10,
+    "concept": "Cross Validation",
+    "difficulty": "Easy",
+    "question": "What is cross-validation?",
+    "answer": "Cross-validation is a technique used to evaluate a machine learning model using multiple training and validation splits."
+  },
+  {
+    "id": 11,
+    "concept": "Cross Validation",
+    "difficulty": "Medium",
+    "question": "Why is k-fold cross-validation useful?",
+    "answer": "K-fold cross-validation provides a more reliable estimate of model performance by training and validating the model on different subsets of the data."
+  },
+  {
+    "id": 12,
+    "concept": "Cross Validation",
+    "difficulty": "Hard",
+    "question": "How does k-fold cross-validation work?",
+    "answer": "The dataset is divided into k subsets, and the model is trained k times using one subset for validation and the remaining subsets for training."
+  },
+  {
+    "id": 13,
+    "concept": "Underfitting",
+    "difficulty": "Easy",
+    "question": "What is underfitting?",
+    "answer": "Underfitting occurs when a model is too simple to learn the important patterns in the training data."
+  },
+  {
+    "id": 14,
+    "concept": "Underfitting",
+    "difficulty": "Medium",
+    "question": "What are common causes of underfitting?",
+    "answer": "Underfitting can occur when the model is too simple, the features are insufficient, or the model is not trained adequately."
+  },
+  {
+    "id": 15,
+    "concept": "Underfitting",
+    "difficulty": "Hard",
+    "question": "How can underfitting be reduced?",
+    "answer": "Underfitting can be reduced by using a more complex model, improving features, reducing excessive regularization, or training the model longer."
+  },
+  {
+    "id": 16,
+    "concept": "KNN",
+    "difficulty": "Easy",
+    "question": "What is KNN?",
+    "answer": "K-nearest neighbors is a supervised learning algorithm that predicts a value or class using the nearest training examples."
+  },
+  {
+    "id": 17,
+    "concept": "KNN",
+    "difficulty": "Medium",
+    "question": "How does KNN classify a new data point?",
+    "answer": "KNN finds the k nearest training examples and assigns the class that is most common among those neighbors."
+  },
+  {
+    "id": 18,
+    "concept": "KNN",
+    "difficulty": "Hard",
+    "question": "How does the value of k affect KNN?",
+    "answer": "A small k can make KNN sensitive to noise, while a large k produces smoother predictions but may ignore local patterns."
+  }
+]
